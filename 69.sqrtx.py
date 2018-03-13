@@ -39,4 +39,16 @@ class Solution(object):
         :type x: int
         :rtype: int
         """
-        
+        start = 0
+        end = x
+        middle = int((start+end)/2)
+        while middle > start:
+            val = middle * middle
+            if val == x:
+                break
+            elif val > x:
+                end = middle
+            elif val < x:
+                start = middle
+            middle = int((start + end) / 2)
+        return middle
