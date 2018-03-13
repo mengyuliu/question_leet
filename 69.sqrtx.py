@@ -39,6 +39,8 @@ class Solution(object):
         :type x: int
         :rtype: int
         """
+        if x == 1 :
+            return 1
         start = 0
         end = x
         middle = int((start+end)/2)
