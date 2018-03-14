@@ -61,3 +61,6 @@ class Solution(object):
                 start = middle +1
 
         return middle
+
+    #simple solution
+    #只需要比较两个start 与 end的值，确定那个
