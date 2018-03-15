@@ -50,12 +50,48 @@
 #         self.right = None
 
 class Solution(object):
+    def tree_elem(self, root):
+        result = []
+        if not root:
+            return result
+        val = root.val
+        left_list = self.tree_elem(root.left)
+        right_list = self.tree_elem(root.right)
+        result.append(val)
+        result.extend(left_list)
+        result.extend(right_list)
+
+        return result
+
+
     def isValidBST(self, root):
         """
         :type root: TreeNode
         :rtype: bool
         """
-        result = True
+        # result = True
         if not root:
-            return result
+            return True
+        val = root.val
+        #左边的节点
+        left_list = self.tree_elem(root.left)
+        left_result = [True if val>left_val else False for left_val in left_list]
+        for result in left_result:
+            if not result:
+                return False
+        #右边的节点
+        right_list = self.tree_elem(root.right)
+        right_result = [True if val < right_val else False for right_val in right_list]
+        for result in right_result:
+            if not result:
+                return False
+
+        left_com = self.isValidBST(root.left)
+        right_com = self.isValidBST(root.right)
+        if left_com and right_com:
+            return True
+        else:
+            return False
+
+
 
