@@ -54,13 +54,12 @@ def buble_sort(arr):
                 temp = arr[j]
                 arr[j] = arr[j+1]
                 arr[j+1] = temp
-
     return arr
 
 
 
 if __name__ =="__main__":
     print('hello world')
-    # print(quick_sort(l , 0, len(l)-1))
-    # print(merge_sort(l, 0 , len(l)-1))
+    print(quick_sort(l , 0, len(l)-1))
+    print(merge_sort(l, 0 , len(l)-1))
     print (buble_sort(l))
