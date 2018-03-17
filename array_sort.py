@@ -48,6 +48,12 @@ def merge_sort(arr, left, right):
     return result
 
 def buble_sort(arr):
+    for i in range(0, len(arr)):
+        for j in range(0, len(arr)-i-1):
+            if arr[j] > arr[j+1]:
+                temp = arr[j]
+                arr[j] = arr[j+1]
+                arr[j+1] = temp
 
     return arr
 
@@ -56,4 +62,5 @@ def buble_sort(arr):
 if __name__ =="__main__":
     print('hello world')
     # print(quick_sort(l , 0, len(l)-1))
-    print(merge_sort(l, 0 , len(l)-1))
+    # print(merge_sort(l, 0 , len(l)-1))
+    print (buble_sort(l))
