@@ -55,3 +55,6 @@ class Solution(object):
         if n > 0:
             nums1[:n] = nums2[:n]
 
+    def merge_sort(self, nums1, m, nums2, n):
+        nums1[m:] = nums2[:n]
+        nums1.sort()
