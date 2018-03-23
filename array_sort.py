@@ -10,10 +10,10 @@ def quick_sort(arr, left, right):
     high = right
 
     while (left < right):
-        while val < arr[right] and left < right:
+        while val <= arr[right] and left < right:
             right = right -1
         arr[left] = arr[right]
-        while val > arr[left] and left < right:
+        while val >= arr[left] and left < right:
             left = left +1
         arr[right] = arr[left]
     arr[left] = val
